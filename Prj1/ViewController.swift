@@ -17,31 +17,33 @@ class ViewController: UIViewController {
     view.backgroundColor = UIColor.brown
         Lbltext.text = "갈색"
     }
-
-    @IBOutlet weak var Lbltext: UILabel!
-    @IBAction func BtA(_ sender: Any) {
-        if GTA == 0 {
-            view.backgroundColor = UIColor.red
-            GTA = GTA + 1
-            Lbltext.text = "레드"
-        }
-        else if GTA == 1 {
-            view.backgroundColor = UIColor.green
-            GTA = GTA + 1
-            Lbltext.text = "그린"
-        }
-        else if GTA == 2 {
-            view.backgroundColor = UIColor.yellow
-            GTA = GTA - 2
-            Lbltext.text = "노랑"
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var Lbltext: UILabel!
+    @IBAction func BtA(_ sender: Any) {
+        switch (GTA) {
+        case 0:
+            view.backgroundColor = UIColor.red
+            GTA = GTA + 1
+            Lbltext.text = "레드"
+        case 1:
+            view.backgroundColor = UIColor.green
+            GTA = GTA + 1
+            Lbltext.text = "그린"
+            
+        default:
+        view.backgroundColor = UIColor.yellow
+        GTA = GTA - 2
+        Lbltext.text = "노랑"
+        }
+        }
+    }
+    
 
-}
+
+
+
 
